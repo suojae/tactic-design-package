@@ -1,3 +1,2 @@
 ## 0.0.1
-
-* TODO: Describe initial release.
+- 최초 릴리즈: 프라이빗 tactic 디자인 시스템 패키지.
