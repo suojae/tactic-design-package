@@ -20,30 +20,30 @@ final class _BaseColors {
   final Color white = const Color(0xFFFFFFFF);
 }
 
-class _PrimaryColors {
+final class _PrimaryColors {
   const _PrimaryColors();
 
   final Color blue = const Color(0xFF0046A1);
   final Color sky = const Color(0xFF007BFF);
 }
 
-class _SecondaryColors {
+final class _SecondaryColors {
   const _SecondaryColors();
 
   final Color orange = const Color(0xFFFF8C00);
   final Color lemon = const Color(0xFFFFD700);
 }
 
-class _SemanticColors {
+final class _SemanticColors {
   const _SemanticColors();
 
-  final Color red = const Color(0xFF007BFF);
+  final Color red = const Color(0xFFDC2626);
   final Color darkRed = const Color(0xFF8C1919);
 }
 
-class _GradationColors {
+final class _GradationColors {
   const _GradationColors();
 
-  final Color gBlue = const Color(0xFFFFD700);
+  final Color gBlue = const Color(0xFF007BFF);
   final Color gOrange = const Color(0xFFFFD700);
 }
