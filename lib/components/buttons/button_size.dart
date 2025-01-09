@@ -1,29 +1,21 @@
 enum ButtonSize { xl, lg, md, sm }
 
 extension ButtonSizeExtension on ButtonSize {
-  double get height {
-    switch (this) {
-      case ButtonSize.xl:
-        return 56;
-      case ButtonSize.lg:
-        return 48;
-      case ButtonSize.md:
-        return 40;
-      case ButtonSize.sm:
-        return 32;
-    }
-  }
+  static const Map<ButtonSize, double> _heights = {
+    ButtonSize.xl: 56,
+    ButtonSize.lg: 48,
+    ButtonSize.md: 40,
+    ButtonSize.sm: 32,
+  };
 
-  double get fontSize {
-    switch (this) {
-      case ButtonSize.xl:
-        return 18;
-      case ButtonSize.lg:
-        return 16;
-      case ButtonSize.md:
-        return 14;
-      case ButtonSize.sm:
-        return 12;
-    }
-  }
+  static const Map<ButtonSize, double> _fontSizes = {
+    ButtonSize.xl: 18,
+    ButtonSize.lg: 16,
+    ButtonSize.md: 14,
+    ButtonSize.sm: 12,
+  };
+
+  double get height => _heights[this]!;
+
+  double get fontSize => _fontSizes[this]!;
 }

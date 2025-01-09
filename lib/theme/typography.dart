@@ -30,7 +30,7 @@ final class _HeadingTypography {
   );
 
   TextStyle get h4 => GoogleFonts.notoSans(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
   );
 
