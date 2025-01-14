@@ -169,31 +169,8 @@ class _TacticTextFieldState extends State<TacticTextField> {
   }
 
   Widget? _buildSuffix() {
-    if (widget.type == TacticTextFieldType.password) {
-      return IconButton(
-        icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility, color: widget.theme.iconColor),
-        onPressed: () {
-          setState(() {
-            _obscureText = !_obscureText;
-          });
-        },
-      );
-    }
-
-    if (widget.type == TacticTextFieldType.withTimer && widget.showTimer) {
-      return GestureDetector(
-        onTap: () {
-          if (!_isTicking) _startTimer();
-          widget.onTimerTap?.call();
-        },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(_timerText, style: TextStyle(color: widget.theme.labelColor)),
-        ),
-      );
-    }
-
-    if (widget.suffixIcon != null) {
+    Widget? buildDefaultIconButton() {
+      if (widget.suffixIcon == null) return null;
       return IconButton(
         icon: widget.suffixIcon!,
         color: widget.theme.iconColor,
@@ -201,7 +178,38 @@ class _TacticTextFieldState extends State<TacticTextField> {
       );
     }
 
-    return null;
+    switch (widget.type) {
+      case TacticTextFieldType.password:
+        return IconButton(
+          icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),
+          color: widget.theme.iconColor,
+          onPressed: () {
+            setState(() {
+              _obscureText = !_obscureText;
+            });
+          },
+        );
+
+      case TacticTextFieldType.withTimer:
+        if (widget.showTimer) {
+          return GestureDetector(
+            onTap: () {
+              if (!_isTicking) _startTimer();
+              widget.onTimerTap?.call();
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(_timerText, style: TextStyle(color: widget.theme.labelColor)),
+            ),
+          );
+        }
+        return null;
+
+      case TacticTextFieldType.withIconBtn:
+      case TacticTextFieldType.phoneNumber:
+      case TacticTextFieldType.normal:
+        return buildDefaultIconButton();
+    }
   }
 
   TextInputType _keyboardTypeByType(TacticTextFieldType type) {
