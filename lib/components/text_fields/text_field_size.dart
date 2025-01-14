@@ -7,7 +7,7 @@ enum TacticTextFieldSize {
   small,
 }
 
-extension TactticTextFieldSizeExtension on TacticTextFieldSize {
+extension TacticTextFieldSizeExtension on TacticTextFieldSize {
   double get height {
     switch (this) {
       case TacticTextFieldSize.large:
