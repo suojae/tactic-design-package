@@ -27,7 +27,7 @@ final class TacticTextFieldTheme {
   factory TacticTextFieldTheme.dark() {
     return TacticTextFieldTheme(
       backgroundColor: AppColors.base.deep,
-      focusedBorderColor: AppColors.primary.sky,
+      focusedBorderColor: AppColors.base.black,
       errorBorderColor: AppColors.semantic.red,
       disabledBackgroundColor: AppColors.base.half,
       textColor: AppColors.base.white,
