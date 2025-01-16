@@ -29,7 +29,7 @@ extension ButtonTypeExtension on ButtonType {
   }
 
   Color textColor(bool isDisabled) {
-    if (isDisabled) return AppColors.base.gray;
+    if (isDisabled) return AppColors.base.input;
     switch (this) {
       case ButtonType.filled:
         return AppColors.base.white;
