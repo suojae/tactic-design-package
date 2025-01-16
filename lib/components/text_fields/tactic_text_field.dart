@@ -207,6 +207,7 @@ class _TacticTextFieldState extends State<TacticTextField> {
 
       case TacticTextFieldType.withIconBtn:
       case TacticTextFieldType.phoneNumber:
+      case TacticTextFieldType.emailOrPhone:
       case TacticTextFieldType.normal:
         return buildDefaultIconButton();
     }
@@ -218,6 +219,8 @@ class _TacticTextFieldState extends State<TacticTextField> {
         return TextInputType.text;
       case TacticTextFieldType.phoneNumber:
         return TextInputType.phone;
+      case TacticTextFieldType.emailOrPhone:
+        return TextInputType.emailAddress;
       default:
         return TextInputType.text;
     }

@@ -2,6 +2,7 @@ enum TacticTextFieldType {
   normal,
   password,
   phoneNumber,
-  withTimer,
+  emailOrPhone,
   withIconBtn,
+  withTimer,
 }
